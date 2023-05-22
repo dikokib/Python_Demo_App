@@ -1,5 +1,4 @@
-from csv import writer
-from fabric.colors import red, green, yellow, blue, magenta, cyan, white
+from fabric.colors import yellow
 import os
 
 file_path = r'C:\Users\JP17340\Documents\Python Scripts\personal.csv'
@@ -18,16 +17,14 @@ def talk():
 
 def csv_output(name_to_csv,appearance_to_csv):
     if os.path.exists(file_path):
-        with open('personal.csv', 'a', newline='') as f1:
-            print(name_to_csv,appearance_to_csv, file=f1)
+        with open('personal.csv', 'a', newline='') as file_one:
+            print(name_to_csv,appearance_to_csv, file=file_one)
         #writer_object1 = writer(f1)
-        #writer_object1.writerow([name_to_csv,appearance_to_csv])  
+        #writer_object1.writerow([name_to_csv,appearance_to_csv])
     else:
-        with open('personal.csv', 'w') as f2:
-            print(name_to_csv,appearance_to_csv, file=f2)
+        with open('personal.csv', 'w') as file_two:
+            print(name_to_csv,appearance_to_csv, file=file_two)
         #writer_object2 = writer(f2)
-        #writer_object2.writerow([name_to_csv,appearance_to_csv])  
+        #writer_object2.writerow([name_to_csv,appearance_to_csv])
 
 talk()
-
-
